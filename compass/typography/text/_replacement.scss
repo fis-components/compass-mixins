@@ -18,7 +18,7 @@ $hide-text-direction: left !default;
   @include hide-text;
   background: {
     @if is-url($img) {
-      image: $img;
+      image: url($img);
     } @else {
       image: image-url($img);
     }
@@ -45,8 +45,8 @@ $hide-text-direction: left !default;
 // for your application.
 @mixin hide-text($direction: $hide-text-direction) {
   @if $direction == left {
-    $approximate-em-value: 12px / 1em;
-    $wider-than-any-screen: -9999em;
+    $approximate-em-value: 12px;
+    $wider-than-any-screen: -9999;
     text-indent: $wider-than-any-screen * $approximate-em-value;
     overflow: hidden;
     text-align: left;
